@@ -1,10 +1,5 @@
 {
-  "id": 9223372036854757000,
-  "username": "user1",
-  "firstName": "string",
-  "lastName": "string",
-  "email": "string",
-  "password": "string",
-  "phone": "string",
-  "userStatus": 0
+  "code": 1,
+  "type": "error",
+  "message": "User not found"
 }

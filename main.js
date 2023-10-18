@@ -1,5 +1,5 @@
-import * as api from './api.mjs';
-import { PetAnalyzer } from './petAnalyzer.mjs';
+import * as api from './modules/api.js';
+import { PetAnalyzer } from './modules/petAnalyzer.js';
 import fs from 'fs/promises';
 
 (async () => {
@@ -7,7 +7,7 @@ import fs from 'fs/promises';
     const analyzer = new PetAnalyzer(soldPets);
     const nameCounts = analyzer.countPetNames();
     const jsonContent = JSON.stringify(nameCounts, null, 2);
-    await fs.writeFile('./petsNamesCount.json', jsonContent);
+    await fs.writeFile('./data/petsNamesCount.json', jsonContent);
     console.log(nameCounts); 
 })();
 
@@ -15,6 +15,6 @@ import fs from 'fs/promises';
     await api.createNewUser();
     const user = await api.getUserByUserName('user1');
     const jsonContent = JSON.stringify(user, null, 2)
-    await fs.writeFile('./userData.json', jsonContent);
+    await fs.writeFile('./data/userData.json', jsonContent);
     console.log(user); 
 })();
